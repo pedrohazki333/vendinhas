@@ -1,0 +1,51 @@
+{% extends 'layout.njk' %}
+{% block title %}
+  Huztler - Cadastro de clientes
+{% endblock %}
+{% block content %}
+  <div class="row mb-3">
+    <h3>Clientes - Editar cadastro</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card p-3 shadow-sm">
+        <ul class="list-group list-group-flush">
+          <a href="/customers" class="list-group-item list-group-item-action">Lista</a>
+          <a href="/customers/create" class="list-group-item list-group-item-action">Cadastro</a>
+          <a href="/customers/reports" class="list-group-item list-group-item-action">Relatórios</a>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card p-3 shadow-sm">
+        <form action="/customers/edit/{{ customer._id }}" method="POST">
+          <div class="row mb-2">
+            <div class="col-md-6">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control form-control-sm" id="email" name="email" value="{{ customer.email }}">
+            </div>
+            <div class="col-md-6">
+              <label for="name" class="form-label">Nome</label>
+              <input type="text" class="form-control form-control-sm" id="name" name="name" value="{{ customer.name }}">
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-md-6">
+              <label for="phone" class="form-label">Telefone</label>
+              <input type="text" class="form-control form-control-sm" id="phone" name="phone" value="{{ customer.phone }}">
+            </div>
+            <div class="col-md-6">
+              <label for="company" class="form-label">Empresa</label>
+              <input type="text" class="form-control form-control-sm" id="company" name="company" value="{{ customer.company }}">
+            </div>
+          </div>
+          <div class="row mt-3 mb-1">
+            <div class="col-md-12 d-grid gap-2">
+              <button class="btn btn-primary btn-sm" type="submit">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

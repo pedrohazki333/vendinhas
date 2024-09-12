@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/datatables/css/dataTables.dataTables.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>
+      {% block title %}
+        Vendinhas
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar d-flex flex-column shadow-lg">
+      <div class="logo">Vendinhas</div>
+      <ul class="nav flex-column mt-4">
+        <li class="nav-item">
+          <a class="nav-link" href="">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/customers">Customers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/transactions">Transactions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Reports</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="">Settings</a>
+        </li>
+        <!-- Adicione mais links conforme necessário -->
+      </ul>
+      <div class="sidebar-footer">
+        <small>&copy; 2024 Huztler</small>
+      </div>
+    </div>
+    <!-- Main content -->
+    <div class="content">
+      <div class="container">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+    <script src="/js/bootstrap.bundle.js"></script>
+    <script src="/jquery/jquery.min.js"></script>
+    <script src="/datatables/js/dataTables.min.js"></script>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
