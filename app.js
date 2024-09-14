@@ -29,8 +29,10 @@ nunjucks.configure('views', {
   express: app,
   watch: true,
 });
-const customerViewRoutes = require("./routes/web/customerRoutes");
-app.use("/customers", customerViewRoutes);
+const customerViewRoutes = require('./routes/web/customerRoutes');
+app.use('/customers', customerViewRoutes);
+const transactionViewRoutes = require('./routes/web/transactionRoutes');
+app.use('/transactions', transactionViewRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

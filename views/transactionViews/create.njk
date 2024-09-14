@@ -1,0 +1,27 @@
+{% extends 'layout.njk' %}
+{% block title %}
+  Vendinhas - Transações
+{% endblock %}
+{% block content %}
+  <div class="row mb-3">
+    <h3>Transações - Lançamento</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card p-3 shadow-sm">
+        <ul class="list-group list-group-flush">
+          <a href="/transactions" class="list-group-item list-group-item-action">Lista</a>
+          <a href="/transactions/create" class="list-group-item list-group-item-action">Lançamento</a>
+          <a href="/transactions/reports" class="list-group-item list-group-item-action">Relatórios</a>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card p-3 shadow-sm">
+        <form action="" method="POST">
+          
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

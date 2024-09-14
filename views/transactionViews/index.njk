@@ -1,0 +1,52 @@
+{% extends 'layout.njk' %}
+{% block title %}
+  Vendinhas - Transações
+{% endblock %}
+{% block content %}
+  <div class="row mb-3">
+    <h3>Transações - Lista</h3>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="card p-3 shadow-sm">
+        <ul class="list-group list-group-flush">
+          <a href="/transactions" class="list-group-item list-group-item-action">Lista</a>
+          <a href="/transactions/create" class="list-group-item list-group-item-action">Lançamento</a>
+          <a href="/transactions/reports" class="list-group-item list-group-item-action">Relatórios</a>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9">
+      <div class="card p-3 shadow-sm">
+        <table class="table table-hover table-light" id="customersTable">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Descrição</th>
+              <th>Categoria</th>
+              <th>Data da transação</th>
+              <th>Valor</th>
+              <th>Portador</th>
+              <th>Editar</th>
+              <th>Excluir</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for transaction in transactions %}
+              <tr>
+                <td>{{ transaction.name }}</td>
+                <td>{{ transaction.description }}</td>
+                <td>{{ transaction.category }}</td>
+                <td>{{ transaction.transactionDate }}</td>
+                <td>{{ transaction.transactionValue }}</td>
+                <td>{{ transaction.bank }}</td>
+                <td><a>Editar</a></td>
+                <td><a>Excluir</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
